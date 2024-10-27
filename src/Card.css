@@ -1,0 +1,46 @@
+.card{
+    border: 1px solid hsl(0, 0%, 71%);
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px hwb(0 0% 100% / 0.1);
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+    width: 250px;
+    display: inline-block;
+    height: 350px;
+    vertical-align: top;
+    background-color: rgb(190, 188, 188);
+  }
+  
+  .card .card-image{
+    max-width: 60%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .card .card-title{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: hsl(0, 0%, 20%);
+  }
+  
+  .card .card-text{
+    font-family: Arial, sans-serif;
+    color: hsl(0, 0%, 32%);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack cards and buttons vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically if needed */
+    height: fit-content; /* Full viewport height (optional) */
+    padding: 25px;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center; /* Center cards horizontally */
+    flex-wrap: wrap; /* Allow cards to wrap if needed */
+  }
