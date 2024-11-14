@@ -1,43 +1,43 @@
-/* StaffPage.css */
-.staff-page-container {
-    background-color: #fef5e7; /* Light yellow background */
+/* ProfessorsPage.css */
+.professors-page-container {
+    background-color: #eaf2f8; /* Light blue background */
     padding: 50px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align content to the left */
     justify-content: flex-start; /* Align content to the top */
-    color: #7d6608; /* Dark yellow text color */
+    color: #1a5276; /* Dark blue text color */
     text-align: left;
   }
   
-  .staff-page-title {
+  .professors-page-title {
     font-size: 2em; /* Smaller font size */
     font-weight: bold;
-    color: #b9770e; /* Darker yellow */
+    color: #154360; /* Darker blue */
     margin-bottom: 20px;
   }
   
-  .staff-page-description {
+  .professors-page-description {
     font-size: 1.2em; /* Reduced font size */
-    color: #a04000; /* Dark orange text color */
+    color: #21618c; /* Medium blue text color */
     max-width: 700px;
     line-height: 1.6;
     margin-bottom: 30px;
   }
   
-  .staff-back-button {
+  .professors-back-button {
     padding: 10px 20px;
     font-size: 1em; /* Smaller font size */
     color: #fff;
-    background-color: #d35400; /* Orange button color */
+    background-color: #2874a6; /* Blue button color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center; /* Center-align text in the button */
   }
   
-  .staff-back-button:hover {
-    background-color: #ba4a00; /* Darker orange on hover */
+  .professors-back-button:hover {
+    background-color: #1f618d; /* Darker blue on hover */
   }
   
