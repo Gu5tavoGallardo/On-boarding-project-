@@ -1,15 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './StudentsPage.css';
 
 function StudentsPage() {
+  const navigate = useNavigate();
+
   return (
-  <div>
-    <h1>Welcome to the Student Onboarding Page!</h1>
-    <p>
-        This onboarding guide will assist you with any information
-        that you will need to be set up and ready to go!
-    </p>
-  </div>
-  )
+    <div className="students-page-container">
+      <h1 className="students-page-title">Welcome to the Students Page</h1>
+      <p className="students-page-description">
+        This page is designed specifically for students to help them with onboarding, providing all the necessary resources and guidance to get started.
+      </p>
+      <button onClick={() => navigate("/")} className="students-back-button">
+        Back to Home
+      </button>
+    </div>
+  );
 }
 
-export default StudentsPage
+export default StudentsPage;

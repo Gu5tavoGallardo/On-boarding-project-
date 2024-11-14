@@ -1,43 +1,43 @@
-/* StaffPage.css */
-.staff-page-container {
-    background-color: #fef5e7; /* Light yellow background */
+/* StudentsPage.css */
+.students-page-container {
+    background-color: #f0f8ff;
     padding: 50px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align content to the left */
     justify-content: flex-start; /* Align content to the top */
-    color: #7d6608; /* Dark yellow text color */
+    color: #2c3e50;
     text-align: left;
   }
   
-  .staff-page-title {
+  .students-page-title {
     font-size: 2em; /* Smaller font size */
     font-weight: bold;
-    color: #b9770e; /* Darker yellow */
+    color: #2980b9;
     margin-bottom: 20px;
   }
   
-  .staff-page-description {
+  .students-page-description {
     font-size: 1.2em; /* Reduced font size */
-    color: #a04000; /* Dark orange text color */
+    color: #34495e;
     max-width: 700px;
     line-height: 1.6;
     margin-bottom: 30px;
   }
   
-  .staff-back-button {
+  .students-back-button {
     padding: 10px 20px;
     font-size: 1em; /* Smaller font size */
     color: #fff;
-    background-color: #d35400; /* Orange button color */
+    background-color: #e74c3c;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center; /* Center-align text in the button */
   }
   
-  .staff-back-button:hover {
-    background-color: #ba4a00; /* Darker orange on hover */
+  .students-back-button:hover {
+    background-color: #c0392b;
   }
   
