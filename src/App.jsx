@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './Header';
@@ -8,36 +10,33 @@ import StudentsPage from './StudentsPage';
 import ProfessorsPage from './ProfessorsPage';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
-  const [targetRoute, setTargetRoute] = useState(''); // Track the target route after login
-  const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [targetRoute, setTargetRoute] = useState('');
+    const navigate = useNavigate();
 
-  // Set the target route and navigate to login
-  const handleCardClick = (route) => {
-    setTargetRoute(route); // Set the page the user wants to visit
-    navigate('/login'); // Navigate to login page
-  };
+    const handleCardClick = (route) => {
+        setTargetRoute(route);
+        navigate('/login');
+    };
 
-  // Handle successful login
-  const handleLoginSuccess = () => {
-    setIsLoggedIn(true); // Mark as logged in
-    navigate(targetRoute); // Redirect to the initially requested page
-    setTargetRoute(''); // Clear target route after navigation
-  };
+    const handleLoginSuccess = () => {
+        setIsLoggedIn(true);
+        navigate(targetRoute);
+        setTargetRoute('');
+    };
 
-  return (
-    <>
-      <Header />
-
-      <Routes>
-        <Route path="/" element={<HomePage onCardClick={handleCardClick} />} />
-        <Route path="/login" element={<LoginPage onLoginSuccess={handleLoginSuccess} />} />
-        <Route path="/students" element={<StudentsPage />} />
-        <Route path="/professors" element={<ProfessorsPage />} />
-        <Route path="/staff" element={<StaffPage />} />
-      </Routes>
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Routes>
+                <Route path="/" element={<HomePage onCardClick={handleCardClick} />} />
+                <Route path="/login" element={<LoginPage onLoginSuccess={handleLoginSuccess} />} />
+                <Route path="/students" element={isLoggedIn ? <StudentsPage /> : <LoginPage onLoginSuccess={handleLoginSuccess} />} />
+                <Route path="/professors" element={isLoggedIn ? <ProfessorsPage /> : <LoginPage onLoginSuccess={handleLoginSuccess} />} />
+                <Route path="/staff" element={isLoggedIn ? <StaffPage /> : <LoginPage onLoginSuccess={handleLoginSuccess} />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;

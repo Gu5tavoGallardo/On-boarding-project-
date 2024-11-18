@@ -1,42 +1,47 @@
-// LoginPage.jsx
+// LoginPage.js
+
 import React, { useState } from 'react';
-import './LoginPage.css';
+import axios from 'axios';
 
 function LoginPage({ onLoginSuccess }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    if (username === 'user' && password === 'password') {
-      onLoginSuccess(); // Call the success function to redirect
-    } else {
-      alert('Incorrect username or password');
-    }
-  };
+    const handleLogin = async () => {
+        try {
+            // Send a POST request to the login endpoint
+            const response = await axios.post('http://localhost:5000/api/login', { email, password });
 
-  return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" className="login-button">Login</button>
-      </form>
-    </div>
-  );
+            if (response.data.success) {
+                onLoginSuccess(); // Call the success handler if login is successful
+            } else {
+                setError(response.data.message); // Display error message from the server
+            }
+        } catch (err) {
+            setError('Error logging in'); // General error message if request fails
+        }
+    };
+
+    return (
+        <div>
+            <h2>Login</h2>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <button onClick={handleLogin}>Login</button>
+        </div>
+    );
 }
 
 export default LoginPage;
